@@ -185,6 +185,9 @@ final public class InAppWebView extends InputAwareWebView {
 
     javaScriptBridgeInterface = new JavaScriptBridgeInterface(this);
     addJavascriptInterface(javaScriptBridgeInterface, JavaScriptBridgeJS.JAVASCRIPT_BRIDGE_NAME);
+    removeJavascriptInterface("searchBoxJavaBridge_");
+    removeJavascriptInterface("accessibility");
+    removeJavascriptInterface("accessibilityTraversal");
 
     inAppWebViewChromeClient = new InAppWebViewChromeClient(plugin, channel, inAppBrowserDelegate);
     setWebChromeClient(inAppWebViewChromeClient);
